@@ -1,0 +1,100 @@
+
+
+/*---------------------- *\
+ * - Vriables
+\* --------------------- */
+
+
+:root {
+  /* gradient color */
+
+  --gradient-color-1: leaner-gradiant(to right, #f2709c,#ff9472);
+
+  /* colors */
+
+  --botton-color: #2D2942;
+  --text-color: #2A2640;
+  --p-color: #585184;
+
+  --green-color: #7CCCBA;
+  --green-ligth-color: #DAF2EC;
+
+  --brown-color: #FDE7BA;
+  --brown-ligth-color: #FFFBF1;
+
+  --pink-color: #FFA5E1;
+  --pink-ligth-color: #FAD4EC;
+
+  --gry-color: #eee;
+
+  --html: #E54D26;
+  --java: #5382A1;
+  --js: #F7E024;
+  --css: #2651E5;
+
+  /* size */
+
+  --title-size: 30px;
+  --p-size: 12px;
+
+  /* weight */
+
+  --font-900: 900;
+  --font--500: 500;
+  
+
+}
+
+
+
+/*---------------------- *\
+ * - Globall
+\* --------------------- */
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+ul li { list-style: none; }
+
+a { text-decoration: none;  color : var(--text-color);}
+
+
+/* Small  */
+
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+/* Midum  */
+
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+/* large */
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+/* Extra large */
+
+@media (min-width: 1300px) {
+  .container {
+    width: 1300px;
+  }
+}
+
+
+/*---------------------- *\
+ * ----- INDEX ---------
+\* --------------------- */
