@@ -17,8 +17,157 @@
       rel="stylesheet"
     />
 </head>
-<body>
+<body class="Weather_page">
     
+  
+    <div class="sidebar">
+      <div class="logo">
+        <img src="image/umbrella.png" alt="">
+      </div>
+      <ul class="sidebar_list">
+        <li class="active"><a href="#"><i class="fa-regular fa-cloud"></i> Weather</a></li>
+        <li><a href="#"><i class="fa-solid fa-list"></i> Cities</a></li>
+        <li><a href="#"><i class="fa-solid fa-map"></i> Map</a></li> 
+        <li><a href="#"><i class="fa-solid fa-gear"></i> Settings</a></li>
+      </ul> 
+    </div>
+
+    <div class="search">
+      <input id="search" type="search" placeholder='search....'>
+    </div>
+
+    <div class="display">
+      <div class="display_info">
+        <h1 id="city_name">Chichaoua</h1>
+        <p>chance of rain <span>0%</span></p>
+        <div class="temp">31°</div>
+      </div>
+      
+      <div class="status_img">
+        <img id="display_status" src="amcharts_weather_icons_1.0.0/animated/cloudy-day-1.svg" alt="">
+      </div>
+    </div>
+
+    <div class="condition">
+
+      <div class="condition_head">
+        <h2>AIR CONDITIONS</h2>
+        <a href="#" class="more">See more</a>
+      </div>
+
+      <div class="condition_info">
+        <div class="feel">
+          <div class="top_title">
+            <i class="fa-solid fa-temperature-half"></i>
+            <p>Real Feel</p>
+          </div>
+
+         <div class="real_temp value">30°</div>
+
+        </div>
+
+        <div class="wind">
+          <div class="top_title">
+            <i class="fa-solid fa-wind"></i>
+            <p>Wind</p>
+          </div>
+
+         <div class="real_temp value">0.2 Km/h</div>
+
+        </div>
+
+        <div class="rain">
+          <div class="top_title">
+            <i class="fa-solid fa-cloud-rain"></i>
+            <p>Chance of rain</p>
+          </div>
+
+         <div class="real_temp value">0%</div>
+
+        </div>
+
+        <div class="index">
+          <div class="top_title">
+            <i class="fa-solid fa-sun"></i>
+            <p>UV Index</p>
+          </div>
+
+         <div class="real_temp value">3</div>
+
+        </div>
+
+
+      </div>
+      
+    </div>
+
+    <div class="days">
+      <h2>7-DAY FORECAST</h2>
+      <div class="day">
+        <h3>Today</h3>
+        <div class="stat">
+          <img src="amcharts_weather_icons_1.0.0/animated/snowy-1.svg" alt="">
+          <p>sunny</p>
+        </div>
+        <span>36/22</span>
+      </div>
+
+      <div class="day">
+        <h3>Tue</h3>
+        <div class="stat">
+          <img src="amcharts_weather_icons_1.0.0/animated/day.svg" alt="">
+          <p>sunny</p>
+        </div>
+        <span>36/22</span>
+      </div>
+
+      <div class="day">
+        <h3>Wed</h3>
+        <div class="stat">
+          <img src="amcharts_weather_icons_1.0.0/animated/day.svg" alt="">
+          <p>sunny</p>
+        </div>
+        <span>36/22</span>
+      </div>
+
+      <div class="day">
+        <h3>Thu</h3>
+        <div class="stat">
+          <img src="amcharts_weather_icons_1.0.0/animated/cloudy-day-1.svg" alt="">
+          <p>sunny</p>
+        </div>
+        <span>36/22</span>
+      </div>
+
+      <div class="day">
+        <h3>Fri</h3>
+        <div class="stat">
+          <img src="amcharts_weather_icons_1.0.0/animated/cloudy-day-1.svg" alt="">
+          <p>sunny</p>
+        </div>
+        <span>36/22</span>
+      </div>
+
+      <div class="day">
+        <h3>Sat</h3>
+        <div class="stat">
+          <img src="amcharts_weather_icons_1.0.0/animated/cloudy-day-1.svg" alt="">
+          <p>sunny</p>
+        </div>
+        <span>36/22</span>
+      </div>
+
+      <div class="day">
+        <h3>Sun</h3>
+        <div class="stat">
+          <img src="amcharts_weather_icons_1.0.0/animated/cloudy-day-1.svg" alt="">
+          <p>sunny</p>
+        </div>
+        <span>36/22</span>
+      </div>
+    </div>
+
+  
 
 
     <script src="js/main.js"></script>
