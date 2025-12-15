@@ -23,7 +23,7 @@
   --brown-ligth-color: #FFFBF1;
 
   --wite_color: #fff;
- 
+
   /* size */
 
   --title-size: 30px;
@@ -34,6 +34,9 @@
   --font-900: 900;
   --font--500: 500;
   
+  
+  --base: .375em;
+  --line: 2px;
 
 }
 
@@ -308,7 +311,133 @@ body { color: var(--brown-ligth-color); }
 
 } */
 
+
+/* Button */
+
+button{
+    background: #efefef;
+    height: 30px;
+    width: 60px;
+    border-radius: 20px;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    transition: background 0.5s;
+    /*display: none;      "js" */
+    grid-column: 10;
+    grid-row: 1;
+}  
+
+button span{
+    display: block;
+    background: #999;
+    height: 26px;
+    width: 26px;
+    border-radius: 50%;
+    margin-left: 2px;
+    transition: background 0.5s, margin-left 0.5s;
+}
+
+button.active{
+    background: var(--blue-hover);
+}
+button.active span{
+    background: #fff;
+    margin-left: 31px;
+}
+
 /* dark mode */
 
 body.active,
+.Weather_page.active > div { 
+  color: var(--second-color); 
+  background-color: var(--brown-ligth-color);
+}
+
 body.active .sidebar_list li { color: var(--second-color); }
+
+.Weather_page.active > div { background-color: var(--thered-color); }
+
+
+@media (max-width: 920px) {
+  .Weather_page div:nth-child(1) { 
+  grid-column: 1;
+  grid-row: span 10;
+}
+
+.Weather_page div:nth-child(2) { 
+  grid-column: span 7;
+}
+
+.Weather_page div:nth-child(3) { 
+  grid-column: span 9;
+  grid-row: span 4;
+}
+
+.Weather_page div:nth-child(4) { 
+  grid-column: span 9;
+  grid-row: span 5;
+}
+
+.Weather_page div:nth-child(5) { 
+  grid-column: 8/11;
+  grid-row: 2 / 11;
+  display: none;
+}
+
+}
+
+
+
+/*--------------------------- *\
+ * ----- Start page ------
+\* -------------------------  */
+
+.body_start,
+.body_start .image,
+.start {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.start { width: 50%; justify-content: space-between;}
+
+.body_start {
+  min-height: 100dvh;
+  background-color: var(--main-color);
+}
+
+.body_start .image {
+  max-width: 300px;
+  height: 450px;
+  background-color: var(--second-color);
+  border-radius: 10px;
+}
+
+.body_start .image img {
+  width: 80%;
+}
+
+.content img { width: 50px; }
+
+.content { 
+  text-align: center;
+  width: 30%; 
+  padding: 20px;
+}
+
+.content .text h1 { margin-bottom: 0; }
+
+.content .text { margin-bottom: 2rem; }
+
+.content .start_btn { 
+  padding: 14px 28px;
+  background-color: var(--blue-color);
+  color: var(--brown-color);
+  font-weight: var(--font-900);
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.content .start_btn:hover { background-color: var(--blue-hover); }

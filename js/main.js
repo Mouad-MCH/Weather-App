@@ -19,12 +19,18 @@ let rain = document.querySelector('.rain .value')
 let index = document.querySelector('.index .value')
 
 
+let days = document.querySelectorAll(".days .day");
+let display_status_2 = document.getElementById("display_status_2");
+
+
 
 /*---------------------- *\
  * - Variables
 \* --------------------- */
 
+let arr_days = []
 
+let btn= document.getElementById('btn');
 
 
 /*---------------------- *\
@@ -75,6 +81,8 @@ async function display() {
 
     console.log(data_city)
     get_days(input.value)
+    console.log(arr_days)
+
     input.value = "";
 
     city_name.innerHTML = data_city.name;
@@ -84,8 +92,8 @@ async function display() {
 
     const status = data_city.weather[0].main;
     
-    get_status(status)
-
+    get_status(desplay_status,status)
+    
 }
 
 
@@ -97,31 +105,70 @@ async function get_days(input) {
 
     const arr = data_of_days.list;
 
+
     for(let i = 0 ; i<arr.length ; i++) {
-       if(arr[i].dt_txt === `2025-12-13 00:00:00`) {
-        console.log("hello")
-       }
+
+        const day = arr.filter(el => {
+            return el.dt_txt.includes("00:00:00")
+        })
+
+        arr_days.push(day)
+        let x = getLocalDayName(day[i].dt_txt, "Europe/London")
+
+        console.log(x.fullName)
+        // days[i].querySelector("h1").textContent = x.fullName;
+        days[i].firstElementChild.innerHTML = x.fullName.slice(0,3)
+
+        get_status(days[i].childNodes[3].childNodes[1], day[i].weather[0].main)
+        days[i].childNodes[3].childNodes[3].innerHTML = day[i].weather[0].main;
+        // console.log(days[i].childNodes[3].childNodes )
+
+        // console.log(day[i].dt_txt)
+
+        if(arr_days.length == 7) return
     }
     
+    
 }
+
+function getLocalDayName(dt_txt,timeZone) {
+    const date = new Date(dt_txt + 'Z'); 
+    return {
+        fullName: date.toLocaleString('en-US', { 
+            timeZone: timeZone,
+            weekday: 'long',
+        })
+    }
+}
+
 
 
 // Function Switch
 
-function get_status(parr) {
+function get_status(img,parr) {
 
     switch(parr) {
-        case 'Clear': desplay_status.src = "amcharts_weather_icons_1.0.0/animated/day.svg"
+        case 'Clear': img.src = "amcharts_weather_icons_1.0.0/animated/day.svg"
         break;
-        case 'Clouds' : desplay_status.src = "amcharts_weather_icons_1.0.0/animated/cloudy.svg" 
+        case 'Clouds' : img.src = "amcharts_weather_icons_1.0.0/animated/cloudy.svg" 
         break;
-        case 'Snow': desplay_status.src = "amcharts_weather_icons_1.0.0/animated/snowy-6.svg" 
+        case 'Snow': img.src = "amcharts_weather_icons_1.0.0/animated/snowy-6.svg" 
         break;
-        case 'Thunder': desplay_status.src = "amcharts_weather_icons_1.0.0/animated/thunder.svg"
+        case 'Thunder': img.src = "amcharts_weather_icons_1.0.0/animated/thunder.svg"
         break;
-        case 'Rain' : desplay_status.src = "amcharts_weather_icons_1.0.0/animated/rainy-6.svg"
+        case 'Rain' : img.src = "amcharts_weather_icons_1.0.0/animated/rainy-6.svg"
     }
 }
+
+
+//button 
+
+
+function togglebtn(){
+    btn.classList.toggle("active");
+    document.querySelector('body').classList.toggle("active")
+}
+
 
 document.addEventListener("keypress" , (e) => {
     if(e.key == "Enter") {
